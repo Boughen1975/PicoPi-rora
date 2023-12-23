@@ -257,5 +257,3 @@ while True:
     if countdown < 0.1:
         countdown = 300
         refreshData()
-        
-
