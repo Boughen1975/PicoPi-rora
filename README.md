@@ -7,4 +7,6 @@ Other notable funcrtions contained withing the application are:
 - Screen brightness (up and down) Setting is stored on the device so the choosen brightness level is retained following a power off.
 - A reset button is connected to pins 28 & 30 (RUN and GND). This can be used to cycle the Pico in the event it gets hung (can occur waiting for wifi connection).
 
+https://aurorawatch.lancs.ac.uk
+
 Mark Boughen 
