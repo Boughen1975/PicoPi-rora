@@ -1,4 +1,4 @@
-PicoPi-rora allows you to connect to the AuroraWatch UK API (version 0.1) and download a set of data for aurora activity overt the last 24 hours.
+PicoPi-rora allows you to connect to the AuroraWatch UK API (version 0.1) and download a set of data for aurora activity over the last 24 hours.
 Using this data, PicoPi-rora displays a chart of activity on the Pico Display Pack 2 screen connected to a Raspberry Pico.
 
 Other notable funcrtions contained withing the application are:
