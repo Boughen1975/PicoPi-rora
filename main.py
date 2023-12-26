@@ -158,6 +158,7 @@ def refreshData():
     display.circle(300, 60, 14)
     display.circle(300, 180, 14)
     
+    #Inner fill the white circles with black circles
     display.set_pen(BLACK)
     display.circle(20, 60, 13)
     display.circle(20, 180, 13)
