@@ -13,15 +13,10 @@ battery = ''
 
 wlan = network.WLAN(network.STA_IF)
 
-def connect(timeout):
+def connect():
     wlan.active(True)
     wlan.connect(ssid, password)
-    t = time.ticks_ms()
-    while not wlan.isconnected():
-        if time.ticks_diff(time.ticks_ms(), t) > timeout:
-                wlan.disconnect()
-                timedOut()
-                return False
+    while wlan.isconnected() == False:
         #Check every second
         time.sleep(1)
     ip = wlan.ifconfig()[0]
@@ -93,12 +88,6 @@ def pleaseWait():
     display.text('Please wait...', 40, 100, 320, 4)
     display.update()
     display.set_pen(BLACK)
-
-def timedOut():
-    display.set_pen(WHITE)
-    display.text('Timed Out...', 40, 100, 320, 4)
-    display.update()
-    display.set_pen(BLACK) 
     
 def backlight():
     #open backlight.config
@@ -141,17 +130,14 @@ led = RGBLED(6, 7, 8)
 pleaseWait()
 
 try:
-    connect(20)
+    connect()
 except KeyboardInterrupt:
     machine.reset()
 
 def refreshData():
     display.clear()
     pleaseWait()
-    try:
-        connect(20)
-    except KeyboardInterrupt:
-        machine.reset()
+    connect()
     display.clear()
     display.set_pen(BLACK)
     dataURL = "https://aurorawatch.lancs.ac.uk/api/0.1/activity.txt"
