@@ -1,6 +1,6 @@
 import machine, time, requests, network, socket, wlan
 from pimoroni import RGBLED, Button
-from picographics import PicoGraphics, DISPLAY_PICO_DISPLAY_2
+from picographics import picographics, DISPLAY_PICO_DISPLAY_2
 
 display = PicoGraphics(display=DISPLAY_PICO_DISPLAY_2, rotate=0)
 display.set_font("bitmap8")
