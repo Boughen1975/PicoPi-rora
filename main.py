@@ -1,6 +1,6 @@
 import machine, time, requests, network, socket, wlan
 from pimoroni import RGBLED, Button
-from picographics import picographics, DISPLAY_PICO_DISPLAY_2
+from picographics import PicoGraphics, DISPLAY_PICO_DISPLAY_2
 
 display = PicoGraphics(display=DISPLAY_PICO_DISPLAY_2, rotate=0)
 display.set_font("bitmap8")
@@ -17,7 +17,11 @@ def connect():
     wlan.active(True)
     wlan.connect(ssid, password)
     while wlan.isconnected() == False:
+        #check to see if any button is pressed. If so, reboot.
+        if button_a.read() or button_b.read() or button_x.read() or button_y.read():
+            machine.reset()
         #Check every second
+        print ("Still trying to connect...")
         time.sleep(1)
     ip = wlan.ifconfig()[0]
     global ipAddress
