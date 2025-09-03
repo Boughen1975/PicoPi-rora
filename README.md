@@ -10,3 +10,5 @@ Other notable funcrtions contained within the application are:
 https://aurorawatch.lancs.ac.uk
 
 Mark Boughen 
+
+Tested with the MicroPython v1.22.1, picow pimoroni uf2 file. This is required to allow picographics to work.
